@@ -18,8 +18,17 @@ public class Card : MonoBehaviour
     [SerializeField] private CardStatus status;
     [SerializeField] Quaternion startRotation;
     [SerializeField] private Quaternion targetRotation;
-     SpriteRenderer frontRenderer;
-     SpriteRenderer backRenderer;
+     public SpriteRenderer frontRenderer;
+     public SpriteRenderer backRenderer;
+    Game game;
+
+    public void Awake()
+    {
+        status = CardStatus.show_back;
+        GetFrontAndBackSpriteRenderers();
+        game = FindObjectOfType<Game>();
+    }
+
     private void Start()
     {
         
@@ -41,30 +50,28 @@ public class Card : MonoBehaviour
                 else if (status == CardStatus.rotating_to_front) 
                 {
                     status = CardStatus.show_front;
+
+                    game.SelectCard(gameObject);
                 }
 
             }
         }
     }
 
-    private void Awake()
-    {
-        status = CardStatus.show_back;
-        GetFrontAndBackSpriteRenderers();
-    }
-
     private void OnMouseUp()
     {
-        if (status == CardStatus.show_back)
+        if (game.AllowedToSelectCard(this) == true)
         {
-            TurnToFront();
-        }
+            if (status == CardStatus.show_back)
+            {
+                TurnToFront();
+            }
 
-        if (status == CardStatus.show_front)
-        {
-            TurnToBack();
+            if (status == CardStatus.show_front)
+            {
+                TurnToBack();
+            }
         }
-
     }
 
     public void TurnToFront()
@@ -85,10 +92,12 @@ public class Card : MonoBehaviour
 
     private void GetFrontAndBackSpriteRenderers()
     {
+        Debug.Log("Starting Check");
         foreach (Transform t in transform)
         {
             if (t.name == "Front")
             {
+                Debug.Log("Front checked");
                 frontRenderer = t.GetComponent<SpriteRenderer>();
             }
 
@@ -97,5 +106,40 @@ public class Card : MonoBehaviour
                 backRenderer = t.GetComponent<SpriteRenderer>();
             }
         }
+    }
+
+    public void SetFront(Sprite sprite)
+    {
+        if (frontRenderer != null)
+        {
+            frontRenderer.sprite = sprite;
+        }
+    }
+
+    public void SetBack(Sprite sprite)
+    {
+        if (backRenderer != null)
+        {
+            backRenderer.sprite = sprite;
+        }
+
+    }
+
+    public Vector2 GetFrontSize()
+    {
+        if(frontRenderer == null)
+        {
+            Debug.LogError("er is geen frontrenderer");
+        }
+        return frontRenderer.bounds.size;
+    }
+
+    public Vector2 GetBackSize() 
+    {
+        if (backRenderer == null)
+        {
+            Debug.LogError("Er is geen backrenderer gevonden");
+        }
+        return backRenderer.bounds.size;
     }
 }
