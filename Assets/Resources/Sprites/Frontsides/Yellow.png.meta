@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 11933a8eba2fed848b7864dc59c17f6c
+guid: 16f76ce4afe4b7f4b9a25ae1ecac4ebd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8027345044089470142
-    second: jasmin_0
+      213: 6358040702757662528
+    second: Yellow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jasmin_0
+      name: Yellow_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 433
-        height: 383
+        width: 473
+        height: 514
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2430e8d8634299090800000000000000
-      internalID: -8027345044089470142
+      spriteID: 04f6853355c4c3850800000000000000
+      internalID: 6358040702757662528
       vertices: []
       indices: 
       edges: []

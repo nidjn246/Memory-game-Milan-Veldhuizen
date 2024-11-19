@@ -1,8 +1,9 @@
-//using System;
 using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.SceneManagement;
+
 
 public class Game : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class Game : MonoBehaviour
     [SerializeField]  GameObject[] selectedCards;
     private float timeoutTimer;
     [SerializeField] float timeoutTarget;
+    [SerializeField] float Ending = 0;
 
     void Start()
     {
@@ -144,7 +146,6 @@ public class Game : MonoBehaviour
 
     private void ShuffleCards()
     {
-        Debug.Log(placedCards.GetLength(0) + " " + placedCards.GetLength(1));
         while (stackOfCards.Count > 0)
         {
             
@@ -174,7 +175,6 @@ public class Game : MonoBehaviour
                 float xpos = fieldAnchor.transform.position.x + (x * (cardsize.x + offsetX));
                 float ypos = fieldAnchor.transform.position.y - (y * (cardsize.y + offsetY));
 
-                print(card.transform.lossyScale.x);
 
                 placedCards[x, y].transform.position = new Vector3(xpos, ypos, 0f);
             }
@@ -197,7 +197,7 @@ public class Game : MonoBehaviour
 
     private void CheckForMatchingPair()
     {
-        timeoutTimer = 0f;
+        timeoutTimer =0f;
         if (selectedCards[0].name == selectedCards[1].name)
         {
             status = GameStatus.match_found;
@@ -218,6 +218,12 @@ public class Game : MonoBehaviour
             {
                 selectedCards[0].SetActive(false);
                 selectedCards[1].SetActive(false);
+                Ending++;
+
+                if (Ending == 6)
+                {
+                    SceneManager.LoadScene("The End");
+                }
             }
         if (status == GameStatus.no_match_found) 
         {

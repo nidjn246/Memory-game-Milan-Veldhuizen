@@ -2,6 +2,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
+//De status van het kaartje
 public enum CardStatus
 {
     show_back = 0,
@@ -13,6 +14,7 @@ public enum CardStatus
 
 public class Card : MonoBehaviour
 {
+    //Alle variabelen die nodig zijn in dit script
     [SerializeField] float turnTargetTime;
     [SerializeField] float turnTimer;
     [SerializeField] private CardStatus status;
@@ -22,8 +24,10 @@ public class Card : MonoBehaviour
      public SpriteRenderer backRenderer;
     Game game;
 
+    //wanneer de game begint word dit uitgevoert
     public void Awake()
     {
+        //de status word show_back en hij pakt alle sprites voor de kaartjes
         status = CardStatus.show_back;
         GetFrontAndBackSpriteRenderers();
         game = FindObjectOfType<Game>();
@@ -51,7 +55,6 @@ public class Card : MonoBehaviour
                 {
                     status = CardStatus.show_front;
 
-                    game.SelectCard(gameObject);
                 }
 
             }
@@ -64,6 +67,7 @@ public class Card : MonoBehaviour
         {
             if (status == CardStatus.show_back)
             {
+                game.SelectCard(gameObject);
                 TurnToFront();
             }
 
@@ -73,15 +77,18 @@ public class Card : MonoBehaviour
             }
         }
     }
-
+    //Wanneer deze functie word gecalled draait het kaartje naar de voorkant
     public void TurnToFront()
     {
+        //maak de status dat het kaartje aan het draaien is naar de voorkant
         status = CardStatus.rotating_to_front;
         turnTimer = 0f;
+        //zet de transform rotation in de startrotation
         startRotation = transform.rotation;
         targetRotation = Quaternion.Euler(0, 180, 0);
     }
 
+    //Wanneer deze functie word gecalled draait het kaartje naar de achterkant
     public void TurnToBack()
     {
         status = CardStatus.rotating_to_back;
@@ -90,14 +97,13 @@ public class Card : MonoBehaviour
         targetRotation = Quaternion.Euler(0, 0, 0);
     }
 
+    //deze functie pakt alle sprites en renderd ze in de front en back renderer
     private void GetFrontAndBackSpriteRenderers()
     {
-        Debug.Log("Starting Check");
         foreach (Transform t in transform)
         {
             if (t.name == "Front")
             {
-                Debug.Log("Front checked");
                 frontRenderer = t.GetComponent<SpriteRenderer>();
             }
 
@@ -108,6 +114,7 @@ public class Card : MonoBehaviour
         }
     }
 
+    //hier zet de renderer de sprite op de voorkant van het nieuwe gameobject
     public void SetFront(Sprite sprite)
     {
         if (frontRenderer != null)
@@ -116,6 +123,7 @@ public class Card : MonoBehaviour
         }
     }
 
+    //hier zet de renderer de sprite op de achterkant van het nieuwe gameobject
     public void SetBack(Sprite sprite)
     {
         if (backRenderer != null)
@@ -125,6 +133,7 @@ public class Card : MonoBehaviour
 
     }
 
+    //hier kijkt de code hoe groot de voorkant het kaartje is dat is gemaakt
     public Vector2 GetFrontSize()
     {
         if(frontRenderer == null)
@@ -134,6 +143,7 @@ public class Card : MonoBehaviour
         return frontRenderer.bounds.size;
     }
 
+    //hier kijkt de code hoe groot de achterkant het kaartje is dat is gemaakt
     public Vector2 GetBackSize() 
     {
         if (backRenderer == null)

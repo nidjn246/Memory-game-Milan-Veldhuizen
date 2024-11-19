@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 04b7a79deed4ba8458e7739387701567
+guid: 09eeb38d997bc584fbdea7b1d915f584
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5981448535295942999
-    second: belle_0
+      213: -2278566297644842510
+    second: Icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +57,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 7
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: belle_0
+      name: Icon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 433
-        height: 383
+        x: 30
+        y: 4
+        width: 189
+        height: 237
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ae976b8f30adfca0800000000000000
-      internalID: -5981448535295942999
+      spriteID: 2f1c3bf4608e060e0800000000000000
+      internalID: -2278566297644842510
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icon_0: -2278566297644842510
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

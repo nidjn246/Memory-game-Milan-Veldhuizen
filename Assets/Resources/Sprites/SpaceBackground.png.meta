@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1b1886b58a4c03543b4e4aeea0eb1a3c
+guid: a4cd7354084c16e46b3e246e98ecce99
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8007518808366505585
-    second: pluto_0
+      213: -4354248775225258120
+    second: SpaceBackground_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pluto_0
+      name: SpaceBackground_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 433
-        height: 383
+        width: 2224
+        height: 1668
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f812e07c1149fd090800000000000000
-      internalID: -8007518808366505585
+      spriteID: 87fc4090fc99293c0800000000000000
+      internalID: -4354248775225258120
       vertices: []
       indices: 
       edges: []

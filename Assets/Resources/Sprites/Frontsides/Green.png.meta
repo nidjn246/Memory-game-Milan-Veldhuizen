@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 17ae4d87ab3076c4ebef2f528dc944d0
+guid: 2c715f52f2bda4741b844c81762d7847
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4158038485906246336
-    second: knabbel_babbel_0
+      213: -4987337320017983735
+    second: Green_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: knabbel_babbel_0
+      name: Green_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 433
-        height: 383
+        width: 473
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ca48d209f154b930800000000000000
-      internalID: 4158038485906246336
+      spriteID: 9078749a12b69cab0800000000000000
+      internalID: -4987337320017983735
       vertices: []
       indices: 
       edges: []

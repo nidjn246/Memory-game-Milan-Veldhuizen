@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0e8530d3e83e450448f45edca6171a01
+guid: b8ac2ea6254d67f499fdb0144d19e6f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1371305211820415572
-    second: alladdin_0
+      213: -6601691336363857274
+    second: White_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: alladdin_0
+      name: White_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 433
-        height: 383
+        width: 473
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45a923d13dad70310800000000000000
-      internalID: 1371305211820415572
+      spriteID: 68a2243f4b41264a0800000000000000
+      internalID: -6601691336363857274
       vertices: []
       indices: 
       edges: []
