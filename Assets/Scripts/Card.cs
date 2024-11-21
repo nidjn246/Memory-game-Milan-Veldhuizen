@@ -23,6 +23,7 @@ public class Card : MonoBehaviour
      public SpriteRenderer frontRenderer;
      public SpriteRenderer backRenderer;
     Game game;
+    private AudioSource audioSource;
 
     //wanneer de game begint word dit uitgevoert
     public void Awake()
@@ -35,11 +36,13 @@ public class Card : MonoBehaviour
 
     private void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     private void Update()
     {
+        
         if (status == CardStatus.rotating_to_front || status == CardStatus.rotating_to_back)
         {
             turnTimer += Time.deltaTime;
@@ -65,6 +68,11 @@ public class Card : MonoBehaviour
     {
         if (game.AllowedToSelectCard(this) == true)
         {
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+
             if (status == CardStatus.show_back)
             {
                 game.SelectCard(gameObject);
